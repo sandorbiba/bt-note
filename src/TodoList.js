@@ -3,7 +3,7 @@ import Todo from "./Todo";
 import NewTodoForm from "./NewTodoForm";
 
 export default class TodoList extends Component {
-  state = { todos: [{ task: "Sapka" }, { task: "Fehér póló" }] };
+  state = { todos: [] };
 
   create = newTodo => {
     this.setState({
@@ -11,9 +11,22 @@ export default class TodoList extends Component {
     });
   };
 
+  remove = id => {
+    this.setState({
+      todos: this.state.todos.filter(t => t.id !== id)
+    });
+  };
+
   render() {
     const todos = this.state.todos.map(todo => {
-      return <Todo task={todo.task} />;
+      return (
+        <Todo
+          key={todo.id}
+          id={todo.id}
+          task={todo.task}
+          removeTodo={this.remove}
+        />
+      );
     });
     return (
       <div>
