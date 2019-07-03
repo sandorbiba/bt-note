@@ -6,7 +6,35 @@ import { CSSTransition, TransitionGroup } from "react-transition-group";
 
 export default class TodoList extends Component {
   state = {
-    todos: []
+    todos: [
+      { key: 1, id: 1, task: "Karóra, lehetőleg vízálló", completed: false },
+      { key: 2, id: 2, task: "Baseball sapka", completed: false },
+      { key: 3, id: 3, task: "Övtáska", completed: false },
+      { key: 4, id: 4, task: "Kullancs / szúnyogriasztó", completed: false },
+      { key: 5, id: 5, task: "Zárt cipő", completed: false },
+      { key: 6, id: 6, task: "Hosszúnadrág", completed: false },
+      {
+        key: 7,
+        id: 7,
+        task: "Kényelmes, játszós ruha",
+        completed: false
+      },
+      {
+        key: 8,
+        id: 8,
+        task: "Fürdőruha, mert bemegyünk a tóba",
+        completed: false
+      },
+      { key: 9, id: 9, task: "Törcsi", completed: false },
+      {
+        key: 10,
+        id: 10,
+        task: "Fogkefe / fogkrém / tusfürdő / stb...",
+        completed: false
+      },
+      { key: 11, id: 11, task: "Papucs, tusoláshoz", completed: false },
+      { key: 12, id: 12, task: "Nasi :-)", completed: false }
+    ]
   };
 
   create = newTodo => {
